@@ -11,7 +11,7 @@
 
 class Button {
 public:
-    Button(const std::string& imagePath, float positionX, float positionY) {
+    Button(const std::string& imagePath, const float &positionX, const float &positionY) {
         // Cargar la textura de la imagen
         if (!buttonTexture.loadFromFile(imagePath)) {
             throw std::runtime_error("No se pudo cargar la imagen del botón.");

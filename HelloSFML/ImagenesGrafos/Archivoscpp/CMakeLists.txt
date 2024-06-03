@@ -9,6 +9,8 @@ add_executable(HelloSFML main.cpp
         Escena.cpp
         Escena.h
         Juego.h
+        Juego.h
+        Juego.cpp
 )
 
 set(SFML_STATIC_LIBRARIES TRUE)

@@ -73,6 +73,14 @@ build CMakeFiles/HelloSFML.dir/Escena.cpp.obj: CXX_COMPILER__HelloSFML_unscanned
   OBJECT_DIR = CMakeFiles\HelloSFML.dir
   OBJECT_FILE_DIR = CMakeFiles\HelloSFML.dir
 
+build CMakeFiles/HelloSFML.dir/Juego.cpp.obj: CXX_COMPILER__HelloSFML_unscanned_Debug D$:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Archivoscpp/Juego.cpp || cmake_object_order_depends_target_HelloSFML
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\HelloSFML.dir\Juego.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem C:/SFML/include
+  OBJECT_DIR = CMakeFiles\HelloSFML.dir
+  OBJECT_FILE_DIR = CMakeFiles\HelloSFML.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target HelloSFML
@@ -81,7 +89,7 @@ build CMakeFiles/HelloSFML.dir/Escena.cpp.obj: CXX_COMPILER__HelloSFML_unscanned
 #############################################
 # Link the executable HelloSFML.exe
 
-build HelloSFML.exe: CXX_EXECUTABLE_LINKER__HelloSFML_Debug CMakeFiles/HelloSFML.dir/main.cpp.obj CMakeFiles/HelloSFML.dir/Button.cpp.obj CMakeFiles/HelloSFML.dir/Escena.cpp.obj | C$:/SFML/lib/libsfml-system-s-d.a C$:/SFML/lib/libsfml-window-s-d.a C$:/SFML/lib/libsfml-graphics-s-d.a C$:/SFML/lib/libsfml-audio-s-d.a C$:/SFML/lib/libsfml-window-s-d.a C$:/SFML/lib/libfreetype.a C$:/SFML/lib/libsfml-system-s-d.a C$:/SFML/lib/libopenal32.a C$:/SFML/lib/libvorbisfile.a C$:/SFML/lib/libvorbisenc.a C$:/SFML/lib/libvorbis.a C$:/SFML/lib/libogg.a C$:/SFML/lib/libFLAC.a
+build HelloSFML.exe: CXX_EXECUTABLE_LINKER__HelloSFML_Debug CMakeFiles/HelloSFML.dir/main.cpp.obj CMakeFiles/HelloSFML.dir/Button.cpp.obj CMakeFiles/HelloSFML.dir/Escena.cpp.obj CMakeFiles/HelloSFML.dir/Juego.cpp.obj | C$:/SFML/lib/libsfml-system-s-d.a C$:/SFML/lib/libsfml-window-s-d.a C$:/SFML/lib/libsfml-graphics-s-d.a C$:/SFML/lib/libsfml-audio-s-d.a C$:/SFML/lib/libsfml-window-s-d.a C$:/SFML/lib/libfreetype.a C$:/SFML/lib/libsfml-system-s-d.a C$:/SFML/lib/libopenal32.a C$:/SFML/lib/libvorbisfile.a C$:/SFML/lib/libvorbisenc.a C$:/SFML/lib/libvorbis.a C$:/SFML/lib/libogg.a C$:/SFML/lib/libFLAC.a
   FLAGS = -g
   LINK_LIBRARIES = C:/SFML/lib/libsfml-system-s-d.a  C:/SFML/lib/libsfml-window-s-d.a  C:/SFML/lib/libsfml-graphics-s-d.a  C:/SFML/lib/libsfml-audio-s-d.a  C:/SFML/lib/libsfml-window-s-d.a  -lOpenGL32  -lgdi32  C:/SFML/lib/libfreetype.a  C:/SFML/lib/libsfml-system-s-d.a  -lwinmm  C:/SFML/lib/libopenal32.a  C:/SFML/lib/libvorbisfile.a  C:/SFML/lib/libvorbisenc.a  C:/SFML/lib/libvorbis.a  C:/SFML/lib/libogg.a  C:/SFML/lib/libFLAC.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\HelloSFML.dir

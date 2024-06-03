@@ -4,26 +4,46 @@
 
 #ifndef JUEGO_H
 #define JUEGO_H
+
+#include <SFML/Graphics.hpp>
 #include "Escena.h"
 #include <fstream>
 #include <sstream>
 #include <vector>
 #include <string>
 
+
 class Juego {
 public:
-    Juego(sf::VideoMode tamaño) {
+    explicit Juego(const sf::VideoMode &tamaño) {
+        this->tamaño = tamaño;
         this->windowSizeHeight = tamaño.height;
         this->windowSizeWidth = tamaño.width;
+        this->currentEscena = Escena(tamaño, leerBackground(1)[0]);
     }
 
-    void crearEscenaInicial(sf::Font &font) {
-        this->currentEscena = new Escena(tamaño,leerBackground(1)[0]);
-        this->currentEscena.addButton(leerBackground(1)[1],)
+    void crearEscenaInicial() {
+        std::vector<std::string> paths = leerBackground(1);
+        if (!paths.empty()) {
+            this->currentEscena = Escena(tamaño, paths[0]);
+            this->currentEscena.addButton(paths[1], 50, static_cast<float>(this->windowSizeHeight) - 100);
+            this->currentEscena.addButton(paths[2], 350, static_cast<float>(this->windowSizeHeight) - 100);
+            this->currentEscena.addButton(paths[3], 650, static_cast<float>(this->windowSizeHeight - 100));
+        }
     }
 
-    static std::vector<std::string> leerBackground(int indice) {
-        std::ifstream archivo("ListaBackgroundPaths.txt");
+    void cambiarEscena(int valorIngresado) {
+        std::vector<std::string> paths = leerBackground(valorIngresado);
+        if (!paths.empty()) {
+            this->currentEscena = Escena(tamaño, paths[0]);
+            this->currentEscena.addButton(paths[1], 50, static_cast<float>(this->windowSizeHeight) - 100);
+            this->currentEscena.addButton(paths[2], 350, static_cast<float>(this->windowSizeHeight) - 100);
+            this->currentEscena.addButton(paths[3], 650, static_cast<float>(this->windowSizeHeight - 100));
+        }
+    }
+
+    std::vector<std::string> leerBackground(int indice) {
+        std::ifstream archivo("D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Archivoscpp/ListaBackgroundPaths.txt");
         if (!archivo.is_open()) {
             std::cerr << "No se pudo abrir el archivo." << std::endl;
             return {};
@@ -58,15 +78,21 @@ public:
         return lista;
     }
 
-    draw(sf::RenderWindow &window) {
-        currentEscena.draw(window);
+    void draw(sf::RenderWindow &window){
+        this->currentEscena.draw(window);
+        this->currentEscena.drawButtons(window);
+    }
+
+    Escena getEscena() {
+        return this->currentEscena;
     }
 
 private:
     Escena currentEscena;
+    sf::VideoMode tamaño;
     unsigned int windowSizeHeight;
     unsigned int windowSizeWidth;
 };
 
+#endif // JUEGO_H
 
-#endif //JUEGO_H
