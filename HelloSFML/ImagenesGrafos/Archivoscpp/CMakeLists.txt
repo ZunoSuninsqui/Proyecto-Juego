@@ -7,7 +7,9 @@ add_executable(HelloSFML main.cpp
         Button.cpp
         Button.h
         Escena.cpp
-        Escena.h)
+        Escena.h
+        Juego.h
+)
 
 set(SFML_STATIC_LIBRARIES TRUE)
 set(SFML_DIR C:/SFML/lib/cmake/SFML)

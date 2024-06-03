@@ -7,38 +7,34 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+
+
 class Button {
 public:
-    Button(const std::string& text, const sf::Font& font, unsigned int characterSize, const sf::Color& textColor, const sf::Color& buttonColor, float PositionX, float PositionY) {
-        // Configure the text
-        buttonText.setFont(font);
-        buttonText.setString(text);
-        buttonText.setCharacterSize(characterSize);
-        buttonText.setFillColor(textColor);
-        buttonText.setPosition(PositionX, PositionY);
+    Button(const std::string& imagePath, float positionX, float positionY) {
+        // Cargar la textura de la imagen
+        if (!buttonTexture.loadFromFile(imagePath)) {
+            throw std::runtime_error("No se pudo cargar la imagen del botón.");
+        }
 
-        // Configure the button shape
-        buttonShape.setSize(sf::Vector2f(buttonText.getGlobalBounds().width, buttonText.getGlobalBounds().height));
-        buttonShape.setFillColor(buttonColor);
-        buttonShape.setPosition(PositionX, PositionY);
+        // Configurar el sprite con la textura
+        buttonSprite.setTexture(buttonTexture);
+        buttonSprite.setPosition(positionX, positionY);
     }
 
     void draw(sf::RenderWindow& window) const {
-        window.draw(buttonShape);
-        window.draw(buttonText);
+        window.draw(buttonSprite);
     }
 
     bool isClicked(const sf::Vector2i& mousePos) const {
-        return buttonShape.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
-    }
-    std::string getTextString() {
-        return buttonText.getString();
+        return buttonSprite.getGlobalBounds().contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
     }
 
 private:
-    sf::RectangleShape buttonShape;
-    sf::Text buttonText;
+    sf::Texture buttonTexture;
+    sf::Sprite buttonSprite;
 };
+
 
 
 #endif //BUTTON_H

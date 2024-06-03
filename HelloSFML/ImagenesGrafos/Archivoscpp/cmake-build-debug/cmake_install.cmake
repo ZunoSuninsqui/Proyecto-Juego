@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/usuario 1/Documentos/CLionProjects/HelloSFML/ImagenesGrafos/Archivoscpp
+# Install script for directory: D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Archivoscpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/usuario 1/Documentos/CLionProjects/HelloSFML/ImagenesGrafos/Archivoscpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Archivoscpp/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
