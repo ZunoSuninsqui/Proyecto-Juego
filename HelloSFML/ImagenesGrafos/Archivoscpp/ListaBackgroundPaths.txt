@@ -1,0 +1,4 @@
+1|D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Imagenes/ImagenesBackground/imagen1.jpg|D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Imagenes/ImagenesBotones/imagen1.png|ImagenesGrafos/Imagenes/ImagenesBotones/imagen2.jpg|ImagenesGrafos/Imagenes/ImagenesBotones/imagen3.jpg
+2|D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Imagenes/ImagenesBackground/imagen2.jpg|ImagenesGrafos/Imagenes/ImagenesBotones/imagen2.jpg|ImagenesGrafos/Imagenes/ImagenesBotones/imagen3.jpg
+3|D:/Java/Proyecto-Juego/HelloSFML/ImagenesGrafos/Imagenes/ImagenesBackground/imagen3.jpg|ImagenesGrafos/Imagenes/ImagenesBotones/imagen1.jpg|ImagenesGrafos/Imagenes/ImagenesBotones/imagen2.jpg|/ImagenesGrafos/Imagenes/ImagenesBotones/imagen3.jpg
+
