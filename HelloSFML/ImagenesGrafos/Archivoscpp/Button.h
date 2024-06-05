@@ -1,24 +1,23 @@
-//
-// Created by usuario 1 on 25/05/2024.
-//
+// Button.h
 
 #ifndef BUTTON_H
 #define BUTTON_H
 
 #include <SFML/Graphics.hpp>
 #include <string>
-
+#include <memory>
 
 class Button {
 public:
-    Button(const std::string& imagePath, const float &positionX, const float &positionY) {
+    Button(const std::string& imagePath, const float &positionX, const float &positionY)
+        : buttonTexture(std::make_shared<sf::Texture>()) {
         // Cargar la textura de la imagen
-        if (!buttonTexture.loadFromFile(imagePath)) {
+        if (!buttonTexture->loadFromFile(imagePath)) {
             throw std::runtime_error("No se pudo cargar la imagen del botón.");
         }
 
         // Configurar el sprite con la textura
-        buttonSprite.setTexture(buttonTexture);
+        buttonSprite.setTexture(*buttonTexture);
         buttonSprite.setPosition(positionX, positionY);
     }
 
@@ -31,10 +30,8 @@ public:
     }
 
 private:
-    sf::Texture buttonTexture;
+    std::shared_ptr<sf::Texture> buttonTexture;
     sf::Sprite buttonSprite;
 };
-
-
 
 #endif //BUTTON_H
